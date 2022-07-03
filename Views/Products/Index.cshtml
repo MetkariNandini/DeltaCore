@@ -1,0 +1,42 @@
+﻿@model IEnumerable<DeltaCore.Models.ProductsService>
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<html>
+<head>
+    <title>Product</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<table class="table table-striped" align="center" style="width:60%">
+    
+    <tr>
+        <th>ProductID</th>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ProductID</td>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                </tr>
+            }
+        }
+        <tr>
+        </tr>
+    </tbody>
+</table>
+</html>
+
